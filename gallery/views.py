@@ -33,13 +33,6 @@ def past_days_posts(request,past_date):
         raise Http404()
         assert False
 
-
-        day = convert_dates(date)
-        html = f'''
-        <html>
-            <body>
-                <h1>Posts for {day} {date.day}-{date.month}-{date.year}</h1>
-            </body>
-        </html>
-            '''
-        return HttpResponse(html)
+    if date == dt.date.today():
+        return redirect(posts_of_day)
+    return render(request, 'all-pics/past-posts.html', {"date": date})
