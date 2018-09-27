@@ -17,4 +17,7 @@ class PhotoeditorTestClass(TestCase):
     def test_save_method(self):
         self.yvon.save_photoeditor()
         yvon = Photoeditor.objects.all()
-        self.assertTrue(len(yvon) > 0)     
+        self.assertTrue(len(yvon) > 0)  
+
+        
+           
