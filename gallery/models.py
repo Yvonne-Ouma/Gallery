@@ -12,7 +12,7 @@ class Photoeditor(models.Model):
     def save_photoeditor():
         self.save() 
 
-    def delete_Photoeditor():
+    def delete_photoeditor():
         self.delete()       
 
     class Meta:
