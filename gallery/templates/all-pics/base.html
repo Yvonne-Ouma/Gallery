@@ -19,7 +19,8 @@
 </head>
 <body>
     {% include "navbar.html"%}
-{% block content %} <h1>Posts for {{date|date:"l d-F Y"}}</h1> {%endblock%}
+
+    {% block content %} <h1 class ='text-center'>Posts for {{date|date:"l d-F Y"}}</h1> {%endblock%}
 
 
     {% block scripts %}
