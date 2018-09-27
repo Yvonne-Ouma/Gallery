@@ -8,11 +8,8 @@ def welcome(request):
 
 def posts_of_day(request):
     date = dt.date.today()
-
-    # FUNCTION TO CONVERT DATE OBJECT TO FIND EXACT DAY
-    day = convert_dates(date)
     
-    return request(html)
+    return render(request, 'all-pics/today-posts.html', {"date": date,})
 def convert_dates(dates):
     
     # Function that gets the weekday number for the date.
