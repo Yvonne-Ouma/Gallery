@@ -1,4 +1,5 @@
 from django.db import models
+import datetime as dt
 
 # Create your models here.
 class Photoeditor(models.Model):
@@ -40,7 +41,18 @@ class Image(models.Model):
         self.save()
 
     def delete_Image():
-        self.delete()    
+        self.delete()
+
+    @classmethod
+    def todays_posts(cls):
+        today = dt.date.today()
+        posts = cls.objects.filter(pub_date__date = today) 
+        return posts  
+
+    @classmethod
+    def days_posts(cls,date):
+        posts = cls.objects.filter(pub_date__date = date)
+        return posts     
 
 
 

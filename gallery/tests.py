@@ -1,4 +1,5 @@
 from django.test import TestCase
+import datetime as dt
 
 # Create your tests here.
 from django.test import TestCase
@@ -39,4 +40,18 @@ class ImageTestClass(TestCase):
     def tearDown(self):
         Photoeditor.objects.all().delete()
         Category.objects.all().delete()
-        Image.objects.all().delete()           
+        Image.objects.all().delete() 
+
+    def test_get_posts_today(self):
+        today_posts = Image.todays_posts()
+        self.assertTrue(len(today_posts)>0)
+
+
+    
+
+#........
+    def test_get_posts_by_date(self):
+            test_date = '2017-03-17'
+            date = dt.datetime.strptime(test_date, '%Y-%m-%d').date()
+            posts_by_date = Article.days_posts(date)
+            self.assertTrue(len(posts_by_date) == 0)              

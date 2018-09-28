@@ -6,10 +6,11 @@ import datetime as dt
 def welcome(request):
     return render(request, 'gallery.html')
 
-def posts_of_day(request):
+def posts_today(request):
     date = dt.date.today()
+    posts = Image.todays_posts()
     
-    return render(request, 'all-pics/today-posts.html', {"date": date,})
+    return render(request, 'all-pics/today-posts.html', {"date": date,"posts": posts})
 def convert_dates(dates):
     
     # Function that gets the weekday number for the date.
