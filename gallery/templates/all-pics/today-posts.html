@@ -12,7 +12,9 @@
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <h2 class="text-center"> {{ posts_item.name }} </h2>
         </div>
-
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <img src="{{posts_item.image.url}}" class="img-responsive" alt="Image">
+        </div>
     </div>
 
     {% empty %}
@@ -22,9 +24,7 @@
     {% endfor %}
 
     <!--Display news Article images  -->
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <img src="{{posts_item.image.url}}" class="img-responsive" alt="Image">
-    </div>
+
 
 </div>
 

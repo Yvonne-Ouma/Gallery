@@ -9,7 +9,7 @@ def welcome(request):
 
 def posts_today(request):
     date = dt.date.today()
-    posts = Image.todays_posts()
+    posts = Image.objects.all()
     
     return render(request, 'all-pics/today-posts.html', {"date": date,"posts": posts})
 def convert_dates(dates):
@@ -52,5 +52,6 @@ def search_results(request):
 
     else:
         message = "You haven't searched for any image"
-        return render(request, 'all-pics/search.html', {"message": message})    
+        return render(request, 'all-pics/search.html', {"message": message}) 
+       
 
