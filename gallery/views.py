@@ -35,5 +35,7 @@ def past_days_posts(request,past_date):
         assert False
 
     if date == dt.date.today():
-        return redirect(posts_of_day)
-    return render(request, 'all-pics/past-posts.html', {"date": date})
+        return redirect(posts-today)
+
+    posts = Image.days_posts(date)    
+    return render(request, 'all-pics/past-posts.html', {"date": date, "posts": posts})
