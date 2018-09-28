@@ -33,6 +33,7 @@ class Image(models.Model):
     photoeditor = models.ForeignKey(Photoeditor)
     category = models.ManyToManyField(Category)
     pub_date = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to = 'images/')
 
 
     def __str__(self):
