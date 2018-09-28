@@ -32,6 +32,7 @@ class Image(models.Model):
     description = models.CharField(max_length = 90)
     photoeditor = models.ForeignKey(Photoeditor)
     category = models.ManyToManyField(Category)
+    pub_date = models.DateTimeField(auto_now_add=True)
 
 
     def __str__(self):
@@ -41,7 +42,7 @@ class Image(models.Model):
         self.save()
 
     def delete_Image():
-        self.delete()
+        self.delete()    
 
     @classmethod
     def todays_posts(cls):
