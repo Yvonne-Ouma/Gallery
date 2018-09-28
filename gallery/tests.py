@@ -23,20 +23,20 @@ class PhotoeditorTestClass(TestCase):
 class ImageTestClass(TestCase):
     
     def setUp(self):
-        # Creating a new editor and saving it
+        # Creating a new photoeditor and saving it
         self.yvon= Photoeditor(first_name = 'Ojijo', last_name ='Cly')
         self.yvon.save_photoeditor()
 
-        # Creating a new tag and saving it
-        self.new_tag = tags(name = 'testing')
-        self.new_tag.save()
+        # Creating a new category and saving it
+        self.new_category = Category(name = 'fassion')
+        self.new_category.save()
 
-        self.new_article= Article(title = 'Test Article',post = 'This is a random test Post',editor = self.james)
-        self.new_article.save()
+        self.new_image= Image(title = 'show case', name = 'trouser',description = 'it looks good',photoeditor = self.yvon)
+        self.new_image.save()
 
-        self.new_article.tags.add(self.new_tag)
+        self.new_image.category.add(self.new_category)
 
     def tearDown(self):
-        Editor.objects.all().delete()
-        tags.objects.all().delete()
-        Article.objects.all().delete()           
+        Photoeditor.objects.all().delete()
+        Category.objects.all().delete()
+        Image.objects.all().delete()           
