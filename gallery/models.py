@@ -53,7 +53,12 @@ class Image(models.Model):
     @classmethod
     def days_posts(cls,date):
         posts = cls.objects.filter(pub_date__date = date)
-        return posts     
+        return posts  
+
+    @classmethod
+    def search_by_category(cls,search_term):
+        posts = cls.objects.filter(category__icontains = search_term) 
+        return posts  
 
 
 
