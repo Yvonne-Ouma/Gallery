@@ -1,5 +1,5 @@
 from django.db import models
-import datetime as dt
+# import datetime as dt
 
 # Create your models here.
 class Photoeditor(models.Model):
@@ -10,10 +10,10 @@ class Photoeditor(models.Model):
     def __str__(self):
         return self.first_name
 
-    def save_photoeditor():
+    def save_photoeditor(self):
         self.save() 
 
-    def delete_photoeditor():
+    def delete_photoeditor(self):
         self.delete()       
 
     class Meta:
@@ -30,7 +30,7 @@ class Image(models.Model):
     title = models.CharField(max_length = 60)
     name = models.CharField(max_length = 60)
     description = models.CharField(max_length = 90)
-    photoeditor = models.ForeignKey(Photoeditor)
+    # photoeditor = models.ForeignKey(Photoeditor)
     category = models.ManyToManyField(Category)
     pub_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to = 'images/')
@@ -39,10 +39,10 @@ class Image(models.Model):
     def __str__(self):
         return self.title
 
-    def save_Image():
+    def save_Image(self):
         self.save()
 
-    def delete_Image():
+    def delete_Image(self):
         self.delete()    
 
     @classmethod
