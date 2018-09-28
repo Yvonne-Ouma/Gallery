@@ -14,10 +14,10 @@ class PhotoeditorTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.yvon,Photoeditor)) 
 
-    def test_save_method(self):
-        self.yvon.save_photoeditor()
-        yvon = Photoeditor.objects.all()
-        self.assertTrue(len(yvon) > 0)  
+    # def test_save_method(self):
+    #     self.yvon.save_photoeditor()
+    #     yvon = Photoeditor.objects.all()
+    #     self.assertTrue(len(yvon) > 0)  
 
         
 class ImageTestClass(TestCase):
