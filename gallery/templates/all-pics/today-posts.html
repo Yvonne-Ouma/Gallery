@@ -1,31 +1,42 @@
 {%extends 'all-pics/base.html'%}
 
-{% block content %}
-{{block.super}}
-<div class="container">
+<body>
+    {% block content %}
+    {{block.super}}
+    <div class="container">
 
-    <!-- Looping through posts   -->
-    <div class="row">
-        {% for posts_item in posts %}
-
-
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <img src="{{posts_item.image.url}}" class="img-responsive" alt="Image" height=500px width= 500px>
-        </div>
-
-
-        {% empty %}
-
+        <!-- Looping through posts   -->
         <div class="row">
-            <h2 class="text-center">There No Posts Items</h2>
+            {% for posts_item in posts %}
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <img src="{{posts_item.image.url}}" data-toggle="modal" data-target="#{{ posts_item.id}}" class="img-responsive"
+                    alt="Image" height=400px style="text-shadow: 90px 90px 3px solid grey; padding-bottom:20px;">
+            </div>
+
+
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" id="{{ posts_item.id }}" role="dialog"
+                aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <img src="{{posts_item.image.url}}" class="img-responsive" alt="Image" style='width:100%;'>
+                    </div>
+                </div>
+            </div>
+
+            {% empty %}
+
+            <div class="row">
+                <h2 class="text-center">There No Posts Items</h2>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+        <!--Display news Article images  -->
+
+
     </div>
-    <!--Display news Article images  -->
 
+    </div>
 
-</div>
-
-</div>
-
-{% endblock %}
+    {% endblock %}
+</body>

@@ -1,3 +1,6 @@
 h1{
     color : yellow;
 }
+#pic{
+    box-shadow: 30px 30px 30px solid yellow
+}
