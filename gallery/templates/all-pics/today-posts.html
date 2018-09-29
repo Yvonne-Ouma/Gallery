@@ -13,13 +13,13 @@
                 <img src="{{posts_item.image.url}}" data-toggle="modal" data-target="#{{ posts_item.id}}" class="img-responsive"
                     alt="Image" height=400px style="box-shadow:3px 3px solid grey; padding-bottom:20px;">
             </div>
-
-
             <div class="modal fade bd-example-modal-lg" tabindex="-1" id="{{ posts_item.id }}" role="dialog"
                 aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
-                        <h3>Category:{{posts_item.category.name}}</h3>
+                        {% for cat in posts_item.category.all %}
+                        <h3>Category:{{cat}}</h3>
+                        {% endfor %}
                         <img src="{{posts_item.image.url}}" class="img-responsive" alt="Image" style='width:100%;'>
                         <h4>Title: {{ posts_item.title}}</h4>
                         <h4>Name:{{posts_item.name}}</h4>
@@ -32,7 +32,8 @@
 
                     </div>
                 </div>
-            </div>
+
+            
 
             {% empty %}
 
@@ -41,12 +42,9 @@
             </div>
             {% endfor %}
         </div>
+        </div>
         <!--Display news Article images  -->
 
-
-    </div>
-
-    </div>
 
     {% endblock %}
 </body>
