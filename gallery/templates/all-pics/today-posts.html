@@ -21,9 +21,14 @@
                     <div class="modal-content">
                         <h3>Category:{{posts_item.category.name}}</h3>
                         <img src="{{posts_item.image.url}}" class="img-responsive" alt="Image" style='width:100%;'>
+                        <h4>Title: {{ posts_item.title}}</h4>
                         <h4>Name:{{posts_item.name}}</h4>
                         <h4>Description:{{ posts_item.description }}</h4>
-                        
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Copy Link</button>
+                    </div>
+                    </div>
 
                     </div>
                 </div>

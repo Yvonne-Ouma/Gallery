@@ -2,35 +2,22 @@ from django.db import models
 # import datetime as dt
 
 # Create your models here.
-class Photoeditor(models.Model):
-    first_name = models.CharField( max_length=50)
-    last_name = models.CharField(max_length = 50)
-    phone_number = models.CharField(max_length = 10,blank =True)
-
-    def __str__(self):
-        return self.first_name
-
-    def save_photoeditor(self):
-        self.save() 
-
-    def delete_photoeditor(self):
-        self.delete()       
-
-    class Meta:
-        ordering = ['first_name']
 
 class Category(models.Model):
     name = models.CharField(max_length = 30)
 
     def __str__(self):
         return self.name
+
+class Location(models.Model):
+    name = models.CharField(max_length = 30)        
     
 
 class Image(models.Model):
     title = models.CharField(max_length = 60)
     name = models.CharField(max_length = 60)
     description = models.CharField(max_length = 90)
-    # photoeditor = models.ForeignKey(Photoeditor)
+    location = models.ForeignKey(Location)
     category = models.ManyToManyField(Category)
     pub_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to = 'images/')
