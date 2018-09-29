@@ -10,8 +10,8 @@
             {% for posts_item in posts %}
 
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <img src="{{posts_item.image.url}}" data-toggle="modal" data-target="#{{ posts_item.id}}" class="img-responsive"
-                    alt="Image" height=400px style="box-shadow:3px 3px solid grey; padding-bottom:20px;">
+                <img id="yvonne" src="{{posts_item.image.url}}" data-toggle="modal" data-target="#{{ posts_item.id}}" class="img-responsive"
+                    alt="Image" height=400px style="box-shadow:3px 3px solid grey; padding-bottom:20px; ">
             </div>
             <div class="modal fade bd-example-modal-lg" tabindex="-1" id="{{ posts_item.id }}" role="dialog"
                 aria-labelledby="myLargeModalLabel" aria-hidden="true">
