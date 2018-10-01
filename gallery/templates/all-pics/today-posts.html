@@ -6,12 +6,12 @@
     <div class="container">
 
         <!-- Looping through posts   -->
-        <div class="row">
+        <div class="row" style = padding-top:70px;>
             {% for posts_item in posts %}
 
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <img src="{{posts_item.image.url}}" class="img-responsive" id = "photo"data-toggle="modal" data-target="#{{ posts_item.id }}"
-alt="Image" height=400px style=" box-shadow: 4px 7px 7px 7px grey; padding:30px; transition: all 0.3s ease 0s; cursor:
+alt="Image" height=400px style=" box-shadow: 4px 7px 7px 7px grey; padding:20px; transition: all 0.3s ease 0s; cursor:
 pointer; opacity: 0.8;">
                             </div>
             <div class="modal fade bd-example-modal-lg" tabindex="-1" id="{{ posts_item.id }}" role="dialog"
