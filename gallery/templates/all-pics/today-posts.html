@@ -1,19 +1,20 @@
 {%extends 'all-pics/base.html'%}
 <html>
+
 <body>
     {% block content %}
     {{block.super}}
     <div class="container">
 
         <!-- Looping through posts   -->
-        <div class="row" style = padding-top:70px;>
+        <div class="row" style=padding-top:70px;>
             {% for posts_item in posts %}
 
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <img src="{{posts_item.image.url}}" class="img-responsive" id = "photo"data-toggle="modal" data-target="#{{ posts_item.id }}"
-alt="Image" height=400px style=" box-shadow: 4px 7px 7px 7px grey; padding:20px; transition: all 0.3s ease 0s; cursor:
+                <img src="{{posts_item.image.url}}" class="img-responsive" id="photo" data-toggle="modal" data-target="#{{ posts_item.id }}"
+                    alt="Image" height=400px style=" box-shadow: 4px 7px 7px 7px grey; padding:20px; transition: all 0.3s ease 0s; cursor:
 pointer; opacity: 0.8;">
-                            </div>
+            </div>
             <div class="modal fade bd-example-modal-lg" tabindex="-1" id="{{ posts_item.id }}" role="dialog"
                 aria-labelledby="myLargeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
@@ -50,28 +51,11 @@ pointer; opacity: 0.8;">
         </div>
     </div>
     <!--Display news Article images  -->
-    
+
 
 
     {% endblock %}
 </body>
 
-<style>
-    #photo {
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-        transition: all 0.3s ease 0s;
-        cursor: pointer;
-        border-radius: 10px;
-        width: 100% !important;
-    }
 
-    #photo:hover {
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-        opacity: 0.7;
-        overflow: hidden;
-        transition: .5s ease;
-        transform: translateY(-7px);
-    }
-</style>
 </html>
-
