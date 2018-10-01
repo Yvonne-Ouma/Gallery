@@ -15,7 +15,10 @@ class Location(models.Model):
     @classmethod
     def filter_by_location(cls,name):
         location= cls.objects.filter(name = name) 
-        return location      
+        return location 
+
+    def save_location(self):
+        self.save     
     
 
     def __str__(self):
