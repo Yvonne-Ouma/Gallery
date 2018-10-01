@@ -1,4 +1,6 @@
 # GALLERY APP
+## Author
+Yvonne Ouma
 ### Description
 Just as the name suggests,This is a platform where you can view images from different categories and locations. 
 
