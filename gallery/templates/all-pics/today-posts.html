@@ -19,7 +19,9 @@
         <h1 style="text-align:center; font-family: 'Bungee Shade', cursive;
         ">VIEW GALLERY</h1>
             {% for posts_item in posts %}
-
+                {% for cat in posts_item.category.all %}
+                <h3>{{cat}}</h3>
+                {% endfor %}
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                 <img src="{{posts_item.image.url}}" class="img-responsive" id="photo" data-toggle="modal" data-target="#{{ posts_item.id }}"
                     alt="Image" height=400px style=" box-shadow: 4px 7px 7px 7px grey; padding:20px; transition: all 0.3s ease 0s; cursor:
