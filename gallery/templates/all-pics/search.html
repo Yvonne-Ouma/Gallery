@@ -1,6 +1,6 @@
 {%extends 'all-pics/base.html'%}
 {% block content %}
-<div class="container">
+<div class="container" style ="padding:120px">
 
     <div class="row">
         {% if images%}
@@ -17,9 +17,17 @@
 
         {% if images %}
         {% for image in images %}
-        <div class="col-sm-6 col-md-3">
-            <h1>{{image.title}}</h1>
-            <p>{{image.description}}</p>
+        <div class="col-md-6">
+                <div class="panel panel-default" width = 200px>
+                <div class="panel-heading">
+                    <h1>{{image.title}}</h1>
+                </div>
+                <div class="panel-body"><img src="{{image.image.url}}" alt="image" width="400px"></div>
+
+                <div class="panel-footer">
+                    <p>{{image.description}}</p>
+                </div>
+                </div>
         </div>
         {% endfor %}
         {% endif %}

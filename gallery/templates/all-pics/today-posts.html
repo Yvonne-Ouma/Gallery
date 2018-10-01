@@ -4,6 +4,21 @@
 <body>
     {% block content %}
     {{block.super}}
+    <script>
+        function myFunction() {
+/* Get the text field */
+var copyText = document.getElementById("myInput");
+
+/* Select the text field */
+copyText.select();
+
+/* Copy the text inside the text field */
+document.execCommand("copy");
+
+/* Alert the copied text */
+alert("Copied the text: " + copyText.value);
+}
+    </script>
     <div class="container">
 
         <!-- Looping through posts   -->
@@ -28,11 +43,10 @@ pointer; opacity: 0.8;">
                         <h4>Description:{{ posts_item.description }}</h4>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <a onclick="copyLink({{posts_item.id}})"><button type="button" class="btn btn-outline-warning my-2 my-sm-0 link-btn">Copy
-                                    image Link</button></a>
+                            <button type="button" onclick="myFunction()" class="btn btn-outline-warning my-2 my-sm-0 link-btn">Copy
+                                image Link</button>
                             <input class="form-control" type="text" value="http://127.0.0.1:8000{{posts_item.image.url}}"
-                                id="thislinkhere-http://127.0.0.1:8000{{posts_item.image.url}}">
-                            </a>
+                                id="myInput">
                         </div>
                     </div>
 
