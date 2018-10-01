@@ -2,10 +2,10 @@
 ### Description
 Just as the name suggests,This is a platform where you can view images from different categories and locations. 
 
-As a user what can you do
-You can view images.
-You can also click on the image and a modal pops up with details.
-Plus when you look at the image details it will direct you on how to search for that image.
+### As a user what can you do
+* You can view images.
+* You can also click on the image and a modal pops up with details.
+* You can also use the category to search for an image.
 ### Technologies used
 * HTML
 * CSS
@@ -16,7 +16,7 @@ Plus when you look at the image details it will direct you on how to search for 
 ### How to download the application into your device
 * On Github their is a button for ``` Clone or Download``` click on the button to copy the link
 * Run the bellow commands on your Terminal:
-*``` mkdir name of project``` Create a new directory
+* ``` mkdir name of project``` Create a new directory
 * cd ```name of project``` this is to navigate into the directory created
 * ```git Clone https://github.com/Yvonne-Ouma/Gallery.git``` this will downloaded to your local machine
 
