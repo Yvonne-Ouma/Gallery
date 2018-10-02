@@ -6,6 +6,9 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length = 30)
 
+    def save_category(self):
+        self.save()
+
     def __str__(self):
         return self.name
 
@@ -18,9 +21,9 @@ class Location(models.Model):
         return location 
 
     def save_location(self):
-        self.save     
-    
+        self.save() 
 
+        
     def __str__(self):
         return self.name
 
@@ -32,6 +35,16 @@ class Image(models.Model):
     category = models.ManyToManyField(Category)
     pub_date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to = 'images/')
+
+    def save_Image(self):
+        self.save()  
+
+    def delete_Image(self):
+        self.delete()
+
+       
+
+
 
 
 
